@@ -3,58 +3,42 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Employee Login</title>
-<link rel ="stylesheet" type="text/css"
-     href ="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"
-    integrity   ="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin ="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class = "container-fluid" style="margin-top:50px">
-		<div class = "row" style = "height: 100px">
+	<div class="container-fluid" style="margin-top: 50px">
+		<div class="row" style="height: 100px">
 			<div class="col-2"></div>
 			<div class="col-8">
 				<h2 style="text-align: center">Welcome</h2>
 			</div>
 		</div>
 	</div>
-<!-- 	<div class = "container-fluid" > -->
-<!-- 		<div class = "row" style = "height: 200px"> -->
-<!-- 			<div class="col-2"></div> -->
-<!-- 			<div class="col-8"> -->
-<!-- 				<h2 style="text-align: center">Sign Up Now</h2> -->
-<!-- 				<form method="post" action="./SignUpServlet"> -->
-<!-- 					<input  class = "form-control" type="text" name="userNames" placeholder="Username"> -->
-<!-- 					<input  class = "form-control" type="password" name="password1s" placeholder="Password"> -->
-<!-- 					<input  class = "form-control" type="password" name="password2s" placeholder="Repeat Password"> -->
-<!-- 					<button class = "btn-danger">Create Account</button> -->
-<!-- 					<select name="userTypes"> -->
-<!-- 						<option value = Employee>Employee</option> -->
-<!-- 						<option value = Manager >Manager </option> -->
-<!-- 					</select> -->
-<!-- 				</form> -->
-<!-- 			</div> -->
-<!-- 		</div> -->
-<!-- 	</div> -->
-		<div class = "container-fluid" >
-		<div class = "row" style = "height: 200px">
+	<div class="container-fluid">
+		<div class="row" style="height: 200px">
 			<div class="col-2"></div>
 			<div class="col-8">
 				<h2 style="text-align: center">Log In</h2>
-				<form method="post" action = "LoginServlet">
-					<input class = "form-control" type="text" 		id = "userName" name="userName" placeholder="Username">
-					<input class = "form-control" type="password" 	id = "userName" name="password1" placeholder="Password">
-					<button class = "btn-danger">Log In</button>
+				<form method="post" action="LoginServlet">
+					<input class="form-control" type="text" id="userName"
+						name="userName" placeholder="Username"> <input
+						class="form-control" type="password" id="userName"
+						name="password1" placeholder="Password">
+					<button class="btn-danger">Log In</button>
 					<select name="userType">
-						<option value = Employee>Employee</option>
-						<option value = Manager >Manager</option>
+						<option value=Employee>Employee</option>
+						<option value=Manager>Manager</option>
 					</select>
 				</form>
 			</div>
 		</div>
 	</div>
-	
-	<script src = index.js></script>
+	<script src="/scripts/index.js"></script>
 </body>
 </html>
