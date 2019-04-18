@@ -7,6 +7,22 @@
 <body>
 	<h3>Welcome to the Reimbursement Management page</h3>
 	<a href="mainManager.html">Back to Manager page</a>
+	<br>
+	<br>
+
+	<form method="post" action="ProcessReimbursementServlet">
+		<!-- 	vvv THIS TYPE SHOULD BE AN INT vvv -->
+		<input class="form-control" type="text" id="reimbursementId"
+			name="reimbursementId" placeholder="Reimbursement ID" />
+		<button class="btn-danger">Approve</button>
+		<button class="btn-danger">Deny</button>
+
+
+	</form>
+	<br>
+	<button>Display All Reimbursements</button>
+	<br>
+
 	<table>
 		<thead>
 			<th>Reimbursement ID</th>
@@ -18,8 +34,8 @@
 		</thead>
 		<tbody id="reimbursementTable"></tbody>
 	</table>
-	<!-- 	Button Placeholder -->
-	<button>Submit Request</button>
+
+	<br>
 </body>
 
 

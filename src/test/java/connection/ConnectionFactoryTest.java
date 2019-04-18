@@ -17,5 +17,4 @@ public class ConnectionFactoryTest {
 		List<Employee> employees = dao.getAllEmployees();
 		assertEquals(1, employees.size());
 	}
-
 }

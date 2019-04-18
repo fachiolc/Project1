@@ -6,7 +6,21 @@
 </head>
 <body>
 	<h3>Welcome to the employee page</h3>
+<!-- 	Logout Button Placeholder -->
+	<button>Logout</button>
+	<br><br>
 	<a href="viewReimbursements.html">View Reimbursement Requests</a>
+	<br><br>
+		<!-- 		Password is not displayed, it is a button -->
+	<button>Password Reset</button>
+	<br><br>
+	<form method="post" action="UpdateInfoServlet">
+		<input class="form-control" type="text" id="password" name="password"
+			placeholder="New Email">
+		<button class="btn-danger">Update Info</button>
+	</form>
+	<br>
+	<button>Display Employee Info</button>
 	<table>
 		<thead>
 			<th>Employee ID</th>
@@ -16,7 +30,9 @@
 		</thead>
 		<tbody id="employeeTable"></tbody>
 	</table>
-		<!-- 		Password is not displayed, it is a button -->
-	<button>Password Reset</button>
+		
+		<br><br>
+
+	
 </body>
 </html>
