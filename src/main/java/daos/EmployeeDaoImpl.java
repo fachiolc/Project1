@@ -56,14 +56,35 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		}
 		return null;
 	}
+
+
+	
 	@Override
-	public Employee updateEmployee(Employee employee) {
+	public Employee GetEmployeeByLogin(String name, String password, HttpServletResponse response) {
 		List<Employee> employees = new ArrayList<>();
 		try (Connection conn = ConnectionFactory.getConnection()) {
 			// Get connection
 			Statement stmt = conn.createStatement();
 			// Execute
-			ResultSet rs = stmt.executeQuery("UPDATE EMPLOYEES SET EMPLOYEE_PASSWORD WHERE " + employee.getId());
+			ResultSet rs = stmt.executeQuery("SELECT * FROM EMPLOYEES WHERE EMPLOYEE_NAME='" + name + "' AND EMPLOYEE_PASSWORD='" + password + "'");
+			rs.next();
+			if (rs != null) {
+				Employee employee = new Employee(rs.getInt("EMPLOYEE_ID"), rs.getString("EMPLOYEE_NAME"), rs.getString("EMPLOYEE_POSITION"), rs.getString("EMPLOYEE_EMAIL"), rs.getString("EMPLOYEE_PASSWORD"));
+				return employee;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public Employee updateEmployee(String employee_name, String newPassword) {
+		List<Employee> employees = new ArrayList<>();
+		try (Connection conn = ConnectionFactory.getConnection()) {
+			// Get connection
+			Statement stmt = conn.createStatement();
+			// Execute
+			ResultSet rs = stmt.executeQuery("UPDATE EMPLOYEES SET EMPLOYEE_PASSWORD WHERE " + Employee.getId());
 			// Populate
 			if (rs.next()) {
 				Employee e = new Employee();
@@ -77,18 +98,11 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		return null;
 	}
 
-	
 	@Override
-	public Employee GetEmployeeByLogin(String name, String password, HttpServletResponse response) {
-		List<Employee> employees = new ArrayList<>();
-		try (Connection conn = ConnectionFactory.getConnection()) {
-			// Get connection
-			Statement stmt = conn.createStatement();
-			// Execute
-			ResultSet rs = stmt.executeQuery("SELECT * FROM EMPLOYEES WHERE EMPLOYEE_NAME='" + name + "' AND EM);
-			rs.next();
-			
-	} 
+	public Employee updateEmployee(Employee employee) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	
 	

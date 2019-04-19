@@ -2,17 +2,14 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import util.ConnectionFactory;
+import beans.Employee;
+import daos.EmployeeDaoImpl;
 
 /**
  * Servlet implementation class UpdateInfoServlet
@@ -39,19 +36,9 @@ public class UpdateInfoServlet extends HttpServlet {
 		String newPassword = request.getParameter("password");
 		String employee_name = request.getParameter("userName");
 		// 
-		try {
-			Connection conn = ConnectionFactory.getConnection();
-			String sql = "SELECT * FROM EMPLOYEES WHERE EMPLOYEE_NAME=?";
-			// Execute
-			PreparedStatement stmt = conn.prepareStatement(sql);
-			stmt.setString(1,  employee_name);
-			ResultSet rs = stmt.executeQuery();
-			rs.next();
-			ResultSet rs = 
-
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		EmployeeDaoImpl update = new EmployeeDaoImpl();
+		Employee updateEmployee = update.updateEmployee(employee_name, newPassword);
+		
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

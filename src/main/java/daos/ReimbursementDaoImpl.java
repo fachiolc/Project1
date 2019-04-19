@@ -44,7 +44,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 		List<Reimbursements> reimbursements = new ArrayList<>();
 		try (Connection conn = ConnectionFactory.getConnection()) {
 			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("UPDATE TABLE EMPLOYEES "
+			ResultSet rs = stmt.executeQuery("UPDATE TABLE REIMBURSEMENTS "
 					+ "SET REIMBURSEMENT_REQUESTER = " + ",REIMBURSEMENT_AMOUNT = " + "REIMBURSEMENT_DESCRIPTION = " + "REIMBURSEMENT_STATUS=PENDING" + "REIMUBERSEMENTS_MANAGER = NULL");
 		} catch (SQLException e) {
 			e.printStackTrace();

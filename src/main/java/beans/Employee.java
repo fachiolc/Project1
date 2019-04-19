@@ -2,7 +2,7 @@ package beans;
 
 public class Employee 
 {
-	private int id;
+	private static int id;
 	private String name;
 	private String password;
 	private String email;
@@ -19,7 +19,7 @@ public class Employee
 		this.email = email;
 		this.position = position;
 	}
-	public int getId() {
+	public static int getId() {
 		return id;
 	}
 	public void setId(int id) {

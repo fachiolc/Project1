@@ -1,13 +1,11 @@
 package servlets;
 
 import java.io.IOException;
-
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,6 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import beans.Employee;
+import daos.EmployeeDaoImpl;
 import util.ConnectionFactory;
 
 //Servlet implementation class LoginServlet
@@ -49,7 +49,9 @@ public class LoginServlet extends HttpServlet {
 			System.out.println("chk2b");
 		}
 		else {
-			System.out.println("employee page linked");
+//			EmployeeDaoImpl daoImpl = new EmployeeDaoImpl();
+//			Employee employees = daoImpl.GetEmployeeByLogin(userName, password1, response);
+//			System.out.println("employee page linked");
 			if (userType.equals("Employee")){
 				System.out.println("Employee logging in");
 				try {
