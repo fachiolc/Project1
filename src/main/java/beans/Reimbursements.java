@@ -7,14 +7,16 @@ public class Reimbursements
 	private String amount;
 	private String descriptions;
 	private String status;
+	private String manager;
 	
-	public Reimbursements(int id, String requester, String amount, String descriptions, String status) {
+	public Reimbursements(int id, String requester, String amount, String descriptions, String status, String manager) {
 		super();
 		this.id = id;
 		this.requester = requester;
 		this.amount = amount;
 		this.descriptions = descriptions;
 		this.status = status;
+		this.manager = manager;
 	}
 	
 	public int getId() {
@@ -46,6 +48,14 @@ public class Reimbursements
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	public String getManager() {
+		return manager;
+	}
+
+	public void setManager(String manager) {
+		this.manager = manager;
 	}
 	
 	
