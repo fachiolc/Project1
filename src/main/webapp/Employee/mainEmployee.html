@@ -22,14 +22,15 @@
 	<br>
 	<br>
 	<form method="post" action="UpdateInfoServlet">
-		<input class="form-control" type="text" id="password" name="password"
-			placeholder="New Password">
+		<input class="form-control" type="text" name="name" placeholder="Name">
+		<input class="form-control" type="text"  name="password" placeholder="New Password">
 		<button class="btn-danger">Update Info</button>
 	</form>
 	<br>
-	<form action="DisplayMyInfoServlet">
-		<button>Display Employee Info</button>
-	</form>
+<!-- 	<form action="DisplayMyInfoServlet"> -->
+<!-- 		<button>Display Employee Info</button> -->
+<!-- 	</form> -->
+<button type="button" id="DisplayInfo" button onclick="getAllEmployees()">Display Employee Info</button>
 	<table>
 		<thead>
 			<th>Employee ID</th>
@@ -41,5 +42,6 @@
 	</table>
 	<br>
 	<br>
+	<script src="../../Project1_1/scripts/mainEmployee.js"></script>
 </body>
 </html>

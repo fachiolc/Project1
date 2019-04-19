@@ -1,8 +1,8 @@
 window.onload = () => {
-	getAllEmployees();
-	document.getElementById("userName").addEventListener("click", createEmployee);
+	///getAllEmployees();
+	document.getElementById("DisplayInfo").addEventListener("click", getAllEmployees);
 }
-const getAllEmployees = () => {e
+const getAllEmployees = () => {
 	// 1: XMLHttpRequest
 	const xhr = new XMLHttpRequest();
 	// 2: onreadystatechange
@@ -14,26 +14,43 @@ const getAllEmployees = () => {e
 		}
 	};
 	// 3: xhr.open()
-	xhr.open("GET", "http://localhost:8088/Project1_1/api/todos");
+	xhr.open("GET", "http://localhost:8088/Project1_1/api/employees");
 	// 4: xhr.send()
 	xhr.send();
 }
-const populateEmployeeTable = (listofEmployees) => {
-	// enhanced for loop
-	for (let employee of listOfEmployees) {
-		// Create a table cell for each property
-		const tdId = document.createElement("td");
-		const tdName = document.createElement("td");
-		const tdPassword = document.createElement("td");
-		const tdEmail = document.createElement("td");
-		const tdPosititon = document.createElement("td");
-		// Set value of each cell
-		row.appendChild(tdId);
-		row.appendChild(tdName);
-		row.appendChild(tdPassword);
-		row.appendChild(tdEmail);
-		row.appendChild(tdPosition);
-		// Append row onto table of employees
-		document.getElementById("employeeTable").appendChild(row);
-	}
+const populateEmployeesTable = (listOfTodos) => {
+    // The for...of loop is Javascript's version of the enhanced for loop
+    // The for...in loop, this iterates over every property of a JS object
+    for (let todo of listOfTodos) {
+        // Create a table cell for each property of our object
+        const tdUserId = document.createElement("td");
+        const tdName = document.createElement("td");
+        const tdPassword = document.createElement("td");
+        const tdEmail = document.createElement("td");
+        const tdDepartment = document.createElement("td");
+        const tdEmployeeType = document.createElement("td");
+        
+        // Set the value of each cell
+        tdUserId.textContent = todo.userId;
+        tdName.textContent = todo.name;
+        tdPassword.textContent = todo.password;
+        tdEmail.textContent = todo.email;
+        tdDepartment.textContent = todo.department;
+        tdEmployeeType.textContent = todo.employeeType;
+        
+        // Create a row to be appended onto our table
+        const row = document.createElement("tr");
+        
+        // Set the td's to the corresponding order of our table header
+        row.appendChild(tdUserId);
+        row.appendChild(tdName);
+        row.appendChild(tdPassword);
+        row.appendChild(tdEmail);
+        row.appendChild(tdDepartment);
+        row.appendChild(tdEmployeeType);
+        
+        
+        // Append our row onto our table of todos
+        document.getElementById("employeeTable").appendChild(row);
+    }
 }

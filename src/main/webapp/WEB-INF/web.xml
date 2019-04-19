@@ -19,7 +19,7 @@
 <!-- 	</servlet> -->
 <!-- 	<servlet-mapping> -->
 <!-- 		<servlet-name>FrontController</servlet-name> -->
-<!-- 		<url-pattern>/home/*</url-pattern> -->
+<!-- 		<url-pattern>/api/*</url-pattern> -->
 <!-- 	</servlet-mapping> -->
 	<servlet>
 		<description></description>
