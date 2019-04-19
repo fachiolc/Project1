@@ -27,8 +27,74 @@
 		<servlet-name>LoginServlet</servlet-name>
 		<servlet-class>servlets.LoginServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>PasswordResetServlet</display-name>
+		<servlet-name>PasswordResetServlet</servlet-name>
+		<servlet-class>servlets.PasswordResetServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>LogoutServlet</display-name>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>servlets.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>UpdateInfoServlet</display-name>
+		<servlet-name>UpdateInfoServlet</servlet-name>
+		<servlet-class>servlets.UpdateInfoServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>DisplayMyInfoServlet</display-name>
+		<servlet-name>DisplayMyInfoServlet</servlet-name>
+		<servlet-class>servlets.DisplayMyInfoServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ShowRequestedReimbursementsServlet</display-name>
+		<servlet-name>ShowRequestedReimbursementsServlet</servlet-name>
+		<servlet-class>servlets.ShowRequestedReimbursementsServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>DisplayAllReimbursementsServlet</display-name>
+		<servlet-name>DisplayAllReimbursementsServlet</servlet-name>
+		<servlet-class>servlets.DisplayAllReimbursementsServlet</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>PasswordResetServlet</servlet-name>
+		<url-pattern>/PasswordResetServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/LogoutServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>UpdateInfoServlet</servlet-name>
+		<url-pattern>/UpdateInfoServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DisplayMyInfoServlet</servlet-name>
+		<url-pattern>/DisplayMyInfoServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShowRequestedReimbursementsServlet</servlet-name>
+		<url-pattern>/ShowRequestedReimbursementsServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>DisplayAllReimbursementsServlet</servlet-name>
+		<url-pattern>/DisplayAllReimbursementsServlet</url-pattern>
 	</servlet-mapping>
 </web-app>

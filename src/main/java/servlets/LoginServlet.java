@@ -1,13 +1,21 @@
 package servlets;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import util.ConnectionFactory;
 
 //Servlet implementation class LoginServlet
 public class LoginServlet extends HttpServlet {
@@ -16,7 +24,7 @@ public class LoginServlet extends HttpServlet {
 	public LoginServlet() {
 		// TODO Auto-generated constructor stub
 	}
-	 // @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	// @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		// Step 1: set content type
@@ -45,22 +53,59 @@ public class LoginServlet extends HttpServlet {
 		else 
 		{
 			System.out.println("employee page linked");
-			if (userType.equals("Employee"))
-			{
-				RequestDispatcher rd = request.getRequestDispatcher("./Employee/mainEmployee.html");
-				rd.include(request,response);
+			if (userType.equals("Employee")){
+				System.out.println("Employee logging in");
+				try {
+					Connection conn = ConnectionFactory.getConnection();
+					System.out.println("Getting connection");
+					//Get connection
+					String sql = "SELECT * FROM EMPLOYEES WHERE EMPLOYEE_NAME=? and EMPLOYEE_PASSWORD=?";
+					//Execute statement
+					PreparedStatement stmt = conn.prepareStatement(sql);
+					//stmt = conn.prepareStatement(sql);
+					System.out.println("statement prepared");
+					System.out.println(userName + "" + password1);
+					stmt.setString(1,  userName);
+					stmt.setString(2, password1);
+					System.out.println(stmt.toString());
+					ResultSet rs = stmt.executeQuery();
+					// Calls next, always true if a next exists
+					if (rs.next()) 
+					{
+						if (rs.getString("EMPLOYEE_POSITION").equals("Employee")) 
+						{
+							RequestDispatcher rd = request.getRequestDispatcher("./Employee/mainEmployee.html");
+							rd.forward(request,response);
+						}
+						else 
+						{
+							RequestDispatcher rd = request.getRequestDispatcher("index.html");
+							rd.forward(request,response);
+						}
+					}
+					else 
+					{
+						RequestDispatcher rd = request.getRequestDispatcher("index.html");
+						rd.forward(request,response);
+					}
+					RequestDispatcher rd = request.getRequestDispatcher("index.html");
+					rd.forward(request,response);
+
+				}catch (SQLException e)
+				{
+					e.printStackTrace();
+				}
 			}
-			else if (userType.equals("Manager"))
-			{
+			else if (userType.equals("Manager")){
 				RequestDispatcher rd = request.getRequestDispatcher("./Manager/mainManager.html");
 				rd.include(request,response);
 			}
-			else 
-			{
+			else {
 				System.out.println("Error in userType check");
 			}
 		}
 	}
+
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */

@@ -6,13 +6,19 @@
 </head>
 <body>
 	<h3>Welcome to the Manager page</h3>
-<!-- 	Logout Button Placeholder -->
-	<button>Logout</button>
-	<br><br>
-	<a href="manageReimbursements.html">Manage Reimbursements</a>
-	<br><br>
+	<form action="LogoutServlet">
+		<button>Logout</button>
+	</form>
+	<br>
+	<br>
+	<!-- 	vvv THIS href MAY BE AN ISSUE vvv  -->
+	<a href="../../Project1_1/Manager/manageReimbursements.html">Manage Reimbursements</a>
+	<br>
+	<br>
 	<!-- 	 configure this button -->
-	<button>Display All Employees</button>
+	<form action="DisplayAllEmployeesServlet">
+		<button>Display All Employees</button>
+	</form>
 	<br>
 	<table>
 		<thead>
@@ -23,10 +29,6 @@
 		</thead>
 		<tbody id="employeeTable"></tbody>
 	</table>
-
-	
-	
-	
-	<script src = "mainManager.js"></script>
+	<script src="mainManager.js"></script>
 </body>
 </html>

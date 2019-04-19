@@ -8,44 +8,18 @@ import javax.management.RuntimeErrorException;
 
 public class ConnectionFactory {
 	
-	private ConnectionFactory() {
+	public ConnectionFactory() {
 	}
-	
 	public static Connection getConnection() {
-        try 
-        {
+        try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             return DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","CFachiol","313vatorS!");
-        } catch (SQLException e) 
-        {
+        } catch (SQLException e) {
             System.err.println("SQL State: " + e.getSQLState());
             System.err.println("Error Code: " + e.getErrorCode());
             throw new RuntimeException("Cannot connect");
         } catch (ClassNotFoundException e) {
             throw new RuntimeException("Cannot locate driver");
-        }
-		
-		
-		
-		
-		
-		
-		
-		
-		
+        }		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

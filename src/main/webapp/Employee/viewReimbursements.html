@@ -6,9 +6,20 @@
 </head>
 <body>
 	<h3>Welcome to the Reimbursement Page</h3>
-	<a href="mainEmployee.html">Back to Employee page</a>
-	<br><br>
-	<button>Show Requested Reimbursements</button>
+	<a href="../../Project1_1/Employee/mainEmployee.html">Back to Employee page</a>
+	<br>
+	<br>
+	<p> Input Reimbursement Details Below </p>
+	<form method="post" action="SubmitReimbursementServlet">
+		<input class="form-control" type="text" id="requestAmount" name="requestAmount" placeholder="Cost"/>
+		<input class="form-control" type="text" id="requestDescription" name="requestDescription" placeholder="Description"/>
+		<button class="btn-danger">Submit</button>
+	</form>
+	<br>
+	<br>
+	<form action="ShowRequestedReimbursementsServlet">
+		<button>Show Requested Reimbursements</button>
+	</form>
 	<table>
 		<thead>
 			<th>Reimbursement ID</th>
@@ -16,10 +27,10 @@
 			<th>Description</th>
 			<th>Status</th>
 			<th>Manager</th>
-<!-- 			CAN SKIP NAME BECAUSE IT IS THE CURRENTLY LOGGED IN EMPLOYEE -->
+			<!-- 			CAN SKIP NAME BECAUSE IT IS THE CURRENTLY LOGGED IN EMPLOYEE -->
 		</thead>
 		<tbody id="reimbursementTable"></tbody>
 	</table>
-	
+
 </body>
 </html>
