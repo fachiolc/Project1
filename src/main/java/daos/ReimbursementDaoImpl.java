@@ -41,7 +41,14 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 
 	@Override
 	public Reimbursements addReimbursement(int cost, String desc) {
-		// TODO Auto-generated method stub
+		List<Reimbursements> reimbursements = new ArrayList<>();
+		try (Connection conn = ConnectionFactory.getConnection()) {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("UPDATE TABLE EMPLOYEES "
+					+ "SET REIMBURSEMENT_REQUESTER = " + ",REIMBURSEMENT_AMOUNT = " + "REIMBURSEMENT_DESCRIPTION = " + "REIMBURSEMENT_STATUS=PENDING" + "REIMUBERSEMENTS_MANAGER = NULL");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		return null;
 	}
 

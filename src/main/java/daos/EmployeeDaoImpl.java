@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletResponse;
+
 import beans.Employee;
 import util.ConnectionFactory;
 
@@ -74,6 +76,20 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		}
 		return null;
 	}
+
+	
+	@Override
+	public Employee GetEmployeeByLogin(String name, String password, HttpServletResponse response) {
+		List<Employee> employees = new ArrayList<>();
+		try (Connection conn = ConnectionFactory.getConnection()) {
+			// Get connection
+			Statement stmt = conn.createStatement();
+			// Execute
+			ResultSet rs = stmt.executeQuery("SELECT * FROM EMPLOYEES WHERE EMPLOYEE_NAME='" + name + "' AND EM);
+			rs.next();
+			
+	} 
+	
 	
 	
 	

@@ -69,6 +69,13 @@
 		<servlet-name>DisplayAllReimbursementsServlet</servlet-name>
 		<servlet-class>servlets.DisplayAllReimbursementsServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>SubmitReimbursement</display-name>
+		<servlet-name>SubmitReimbursement</servlet-name>
+		<servlet-class>servlets.SubmitReimbursement</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>LoginServlet</servlet-name>
 		<url-pattern>/LoginServlet</url-pattern>
@@ -96,5 +103,9 @@
 	<servlet-mapping>
 		<servlet-name>DisplayAllReimbursementsServlet</servlet-name>
 		<url-pattern>/DisplayAllReimbursementsServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SubmitReimbursement</servlet-name>
+		<url-pattern>/SubmitReimbursement</url-pattern>
 	</servlet-mapping>
 </web-app>
