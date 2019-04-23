@@ -1,5 +1,5 @@
 window.onload = () => {
-	getAllEmployees();
+//	getAllEmployees();
 	document.getElementById("DisplayAllEmployees").addEventListener("click", getAllEmployees);
 }
 const getAllEmployees = () => {
@@ -31,11 +31,11 @@ const populateEmployeesTable = (listofEmployees) => {
 //        const tdDepartment = document.createElement("td");
         const tdEmployeeType = document.createElement("td");
 		// Set value of each cell
-        tdUserId.textcontent = employee.UserId;
-        tdName.textcontent = employee.name;
+        tdUserId.textContent = employee.UserId;
+        tdName.textContent = employee.name;
 //        tdPassword.textcontent = employee.password;
-        tdEmail.textcontent = employee.email;
-        tdEmployeeType.textcontent = employee.employeeType;
+        tdEmail.textContent = employee.email;
+        tdEmployeeType.textContent = employee.employeeType;
         // Create row to be appended
         const row = document.createElement("tr");
         
