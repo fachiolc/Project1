@@ -27,7 +27,7 @@ public class DispatcherServlet extends HttpServlet {
 		// mapper.writeValueAsBytes() converts whatever the Dispatcher returns into a byte[], which getOutputStream().write() accepts
 		// Dispatcher.process() returns whatever resource we have available at the HttpServletRequest's URI
 		resp.getOutputStream().write(mapper.writeValueAsBytes(Dispatcher.process(req, resp)));
-		System.out.println("Response sent successfully");
+		System.out.println("Response sent successfully - Dispatch Complete");
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

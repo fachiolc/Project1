@@ -27,17 +27,17 @@ const populateEmployeesTable = (listOfEmployees) => {
         // Create a table cell for each property of our object
         const tdUserId = document.createElement("td");
         const tdName = document.createElement("td");
-        const tdPassword = document.createElement("td");
+//        const tdPassword = document.createElement("td");
         const tdEmail = document.createElement("td");
-        const tdDepartment = document.createElement("td");
+//        const tdDepartment = document.createElement("td");
         const tdEmployeeType = document.createElement("td");
         
         // Set the value of each cell
         tdUserId.textContent = todo.userId;
         tdName.textContent = todo.name;
-        tdPassword.textContent = todo.password;
+//        tdPassword.textContent = todo.password;
         tdEmail.textContent = todo.email;
-        tdDepartment.textContent = todo.department;
+//        tdDepartment.textContent = todo.department;
         tdEmployeeType.textContent = todo.employeeType;
         
         // Create a row to be appended onto our table
@@ -46,9 +46,9 @@ const populateEmployeesTable = (listOfEmployees) => {
         // Set the td's to the corresponding order of our table header
         row.appendChild(tdUserId);
         row.appendChild(tdName);
-        row.appendChild(tdPassword);
+//        row.appendChild(tdPassword);
         row.appendChild(tdEmail);
-        row.appendChild(tdDepartment);
+//        row.appendChild(tdDepartment);
         row.appendChild(tdEmployeeType);
                 
         // Append our row onto our table of todos
