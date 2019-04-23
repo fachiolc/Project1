@@ -2,7 +2,7 @@ package beans;
 
 public class Employee 
 {
-	private static int id;
+	public static int id;
 	private String name;
 	private String password;
 	private String email;

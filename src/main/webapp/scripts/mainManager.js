@@ -1,6 +1,6 @@
 window.onload = () => {
-//	getAllEmployees();
-	document.getElementById("DisplayAllEmployees").addEventListener("click", getAllEmployees);
+	getAllEmployees();
+//	document.getElementById("DisplayAllEmployees").addEventListener("click", getAllEmployees);
 }
 const getAllEmployees = () => {
 	// 1: XMLHttpRequest

@@ -9,7 +9,7 @@ import beans.Employee;
 public interface EmployeeDao {
 
 	List<Employee> getAllEmployees();
-	Employee getEmployeeById(int id);
+	List<Employee> getEmployeeById(int id);
 	Employee updateEmployee(Employee employee);
 	Employee GetEmployeeByLogin(String name, String password, HttpServletResponse response);
 

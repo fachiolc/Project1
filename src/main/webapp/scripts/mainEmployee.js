@@ -1,8 +1,10 @@
 window.onload = () => {
-	///getAllEmployees();
-	document.getElementById("DisplayInfo").addEventListener("click", getAllEmployees);
+//	getAllEmployees();
+	getEmployeeById();
+
+//	document.getElementById("DisplayInfo").addEventListener("click", getAllEmployees);
 }
-const getAllEmployees = () => {
+const getEmployeeById = () => {
 	// 1: XMLHttpRequest
 	const xhr = new XMLHttpRequest();
 	// 2: onreadystatechange
@@ -20,10 +22,10 @@ const getAllEmployees = () => {
 	// 4: xhr.send()
 	xhr.send();
 }
-const populateEmployeesTable = (listOfEmployees) => {
+const populateEmployeesTable = (jsonEmployees) => {
     // The for...of loop is Javascript's version of the enhanced for loop
     // The for...in loop, this iterates over every property of a JS object
-    for (let todo of listOfEmployees) {
+    for (let todo of jsonEmployees) {
         // Create a table cell for each property of our object
         const tdUserId = document.createElement("td");
         const tdName = document.createElement("td");

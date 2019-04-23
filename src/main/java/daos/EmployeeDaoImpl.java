@@ -25,7 +25,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			// Populate list from ResultSet
 			while (rs.next()) {
 				
-				employees.add(new Employee(rs.getInt("EMPLOYEE_ID"), rs.getString("EMPLOYEE_NAME"), rs.getString("EMPLOYEE_PASSWORD"), rs.getString("EMPLOYEE_EMAIL"), rs.getString("EMPLOYEE_PASSWORD")));
+				employees.add(new Employee(rs.getInt("EMPLOYEE_ID"), rs.getString("EMPLOYEE_NAME"), rs.getString("EMPLOYEE_PASSWORD"), rs.getString("EMPLOYEE_EMAIL"), rs.getString("EMPLOYEE_POSITION")));
 				System.out.println("Added statement - Employee DAO impl");
 			}
 			System.out.println("Connected - Employee DAO impl");
@@ -37,7 +37,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	}
 	
 	@Override
-	public Employee getEmployeeById(int id) {
+	public List<Employee> getEmployeeById(int id) {
 		List<Employee> employees = new ArrayList<>();
 		try (Connection conn = ConnectionFactory.getConnection()) {
 			// Get connection
@@ -46,13 +46,15 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			ResultSet rs = stmt.executeQuery("SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID = " + id ) ;
 			// Populate list from ResultSet
 			if (rs.next()) {
-				Employee e = new Employee();
-				e.setId(rs.getInt("EMLOYEE_ID"));
-				e.setName(rs.getString("EMPLOYEE_NAME"));
-				e.setEmail(rs.getString("EMPLOYEE_EMAIL"));
-				e.setPosition(rs.getString("EMPLOYEE_POSITION"));
+				employees.add(new Employee(rs.getInt("EMPLOYEE_ID"), rs.getString("EMPLOYEE_NAME"), rs.getString("EMPLOYEE_PASSWORD"), rs.getString("EMPLOYEE_EMAIL"), rs.getString("EMPLOYEE_POSITION")));
+				System.out.println("Added statement - Employee DAO impl - getEmployeeById");
+//				Employee e = new Employee();
+//				e.setId(rs.getInt("EMLOYEE_ID"));
+//				e.setName(rs.getString("EMPLOYEE_NAME"));
+//				e.setEmail(rs.getString("EMPLOYEE_EMAIL"));
+//				e.setPosition(rs.getString("EMPLOYEE_POSITION"));
 
-				return e;
+				return employees;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -18,14 +18,14 @@ public class EmployeeServiceImpl implements EmployeeService {
 	
 	@Override
 	public List<Employee> getAllEmployees(HttpServletRequest request, HttpServletResponse response) {
-		System.out.println("Inside EmployeeServiceImpl");
+		System.out.println("Inside EmployeeServiceImpl - getAllEmployees");
 		return dao.getAllEmployees();
 	}
 
 	@Override
 	public List<Employee> getEmployeeById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("Inside EmployeeServiceImpl - getEmployeeById");
+		return dao.getEmployeeById(id);
 	}
 
 	@Override
