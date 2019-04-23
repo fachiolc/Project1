@@ -10,7 +10,9 @@ const getAllEmployees = () => {
 		// 5: handle outcomes
 		if (xhr.status === 200 && xhr.readyState === 4) {
 			const json = xhr.responseText;
-			populateEmployeeTable(JSON.parse(json));
+			console.log(json);
+			populateEmployeesTable(JSON.parse(json));
+			console.log (JSON.parse(json));
 		}
 	};
 	// 3: xhr.open()
@@ -18,10 +20,10 @@ const getAllEmployees = () => {
 	// 4: xhr.send()
 	xhr.send();
 }
-const populateEmployeesTable = (listOfTodos) => {
+const populateEmployeesTable = (listOfEmployees) => {
     // The for...of loop is Javascript's version of the enhanced for loop
     // The for...in loop, this iterates over every property of a JS object
-    for (let todo of listOfTodos) {
+    for (let todo of listOfEmployees) {
         // Create a table cell for each property of our object
         const tdUserId = document.createElement("td");
         const tdName = document.createElement("td");
@@ -48,8 +50,7 @@ const populateEmployeesTable = (listOfTodos) => {
         row.appendChild(tdEmail);
         row.appendChild(tdDepartment);
         row.appendChild(tdEmployeeType);
-        
-        
+                
         // Append our row onto our table of todos
         document.getElementById("employeeTable").appendChild(row);
     }
