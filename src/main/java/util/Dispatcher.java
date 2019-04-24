@@ -15,6 +15,9 @@ public class Dispatcher {
 		final String uri = request.getRequestURI().replace("/Project1_1/api", "");
 		System.out.println("Inside Dispatcher: " + request.getMethod() + " request going to " + uri);
 		switch(uri) {
+		case "/employee":
+			int id = (int) request.getAttribute("employee");
+			return employeeService.getEmployeeById(id);
 		case "/employees":
 			return employeeService.getAllEmployees(request, response);
 		default:

@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import beans.Employee;
 import daos.EmployeeDaoImpl;
@@ -70,7 +71,15 @@ public class LoginServlet extends HttpServlet {
 					ResultSet rs = stmt.executeQuery();
 					// Calls next, always true if a next exists
 					if (rs.next()) {
+						System.out.println("before employee check");
+						// Check that employee exists and password is correct
 						if (rs.getString("EMPLOYEE_POSITION").equals("Employee")) {
+							// Start Session
+							HttpSession session = request.getSession(true);
+							int id = rs.getInt("EMPLOYEE_ID");
+							session.setAttribute("employee", id);
+							System.out.println("id set" + id);
+							
 							RequestDispatcher rd = request.getRequestDispatcher("./Employee/mainEmployee.html");
 							rd.forward(request,response);
 						}
@@ -83,8 +92,8 @@ public class LoginServlet extends HttpServlet {
 						RequestDispatcher rd = request.getRequestDispatcher("index.html");
 						rd.forward(request,response);
 					}
-					RequestDispatcher rd = request.getRequestDispatcher("index.html");
-					rd.forward(request,response);
+//					RequestDispatcher rd = request.getRequestDispatcher("index.html");
+//					rd.forward(request,response);
 				}catch (SQLException e)	{
 					e.printStackTrace();
 				}

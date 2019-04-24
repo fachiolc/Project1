@@ -18,7 +18,7 @@ const getEmployeeById = () => {
 		}
 	};
 	// 3: xhr.open()
-	xhr.open("GET", "http://localhost:8088/Project1_1/api/employees");
+	xhr.open("GET", "http://localhost:8088/Project1_1/api/employee");
 	// 4: xhr.send()
 	xhr.send();
 }
@@ -26,6 +26,8 @@ const populateEmployeesTable = (jsonEmployees) => {
     // The for...of loop is Javascript's version of the enhanced for loop
     // The for...in loop, this iterates over every property of a JS object
     for (let todo of jsonEmployees) {
+    	
+//    	if (id = correctId) {
         // Create a table cell for each property of our object
         const tdUserId = document.createElement("td");
         const tdName = document.createElement("td");

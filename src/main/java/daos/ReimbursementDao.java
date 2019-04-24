@@ -8,5 +8,5 @@ public interface ReimbursementDao {
 	
 	List<Reimbursements> getAllReimbursements();
 	Reimbursements getReimbursementById(int id);
-	Reimbursements addReimbursement(int cost, String desc);
+	Reimbursements addReimbursement(int id, String cost, String desc);
 }

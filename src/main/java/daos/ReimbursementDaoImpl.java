@@ -40,17 +40,18 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 	}
 
 	@Override
-	public Reimbursements addReimbursement(int cost, String desc) {
+	public Reimbursements addReimbursement(int id, String cost, String desc) {
 		List<Reimbursements> reimbursements = new ArrayList<>();
 		try (Connection conn = ConnectionFactory.getConnection()) {
 			Statement stmt = conn.createStatement();
-			ResultSet rs = stmt.executeQuery("UPDATE TABLE REIMBURSEMENTS "
-					+ "SET REIMBURSEMENT_REQUESTER = " + ",REIMBURSEMENT_AMOUNT = " + "REIMBURSEMENT_DESCRIPTION = " + "REIMBURSEMENT_STATUS=PENDING" + "REIMUBERSEMENTS_MANAGER = NULL");
+			ResultSet rs = stmt.executeQuery("INSERT INTO REIMBURSEMENTS (REIMBURSEMENT_ID, REIMBURSEMENT_COST, REIMBURSEMENT_DESCRIPTION, REIMBURSEMENT_STATUS) VALUES('" +
+			id + "','" + cost + "','" + desc + "','pending')");
+			rs.next();
+			System.out.println(rs);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
-
 
 }

@@ -1,10 +1,16 @@
 package servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import beans.Employee;
+import beans.Reimbursements;
+import daos.ReimbursementDao;
+import daos.ReimbursementDaoImpl;
 
 /**
  * Servlet implementation class SubmitReimbursement
@@ -24,8 +30,21 @@ public class SubmitReimbursement extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		// Step 1: set content type
+		response.setContentType("text/html");
+		// Step 2: printwriter
+//		Printwriter out = response.getWriter();
+		// Step 3: get attributes
+		String cost = request.getParameter("Cost");
+		String description = request.getParameter("Description");
+		System.out.println(cost + description);
+		int id = (int) request.getAttribute("employee");
+		// Access DAO
+		ReimbursementDaoImpl temp = new ReimbursementDaoImpl();
+		Reimbursements attempt = temp.addReimbursement(id, cost, description);
+		
+		
+		
 	}
 
 	/**
