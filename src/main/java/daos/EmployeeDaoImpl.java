@@ -87,25 +87,25 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		return null;
 	}
 
-	public Employee updateEmployee(String employee_name, String newPassword) {
-		List<Employee> employees = new ArrayList<>();
-		try (Connection conn = ConnectionFactory.getConnection()) {
-			// Get connection
-			Statement stmt = conn.createStatement();
-			// Execute
-			ResultSet rs = stmt.executeQuery("UPDATE EMPLOYEES SET EMPLOYEE_PASSWORD WHERE " + Employee.getId());
-			// Populate
-			if (rs.next()) {
-				Employee e = new Employee();
-				// TODO; fix this password
-				e.setPassword("");
-				return e;
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
+//	public Employee updateEmployee(String employee_name, String newPassword) {
+//		List<Employee> employees = new ArrayList<>();
+//		try (Connection conn = ConnectionFactory.getConnection()) {
+//			// Get connection
+//			Statement stmt = conn.createStatement();
+//			// Execute
+//			ResultSet rs = stmt.executeQuery("UPDATE EMPLOYEES SET EMPLOYEE_PASSWORD WHERE " + employees.getId());
+//			// Populate
+//			if (rs.next()) {
+//				Employee e = new Employee();
+//				// TODO; fix this password
+//				e.setPassword("");
+//				return e;
+//			}
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		return null;
+//	}
 
 	@Override
 	public Employee updateEmployee(Employee employee) {
