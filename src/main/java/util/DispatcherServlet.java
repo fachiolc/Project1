@@ -20,21 +20,21 @@ public class DispatcherServlet extends HttpServlet {
 	}
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("Dispatcher Servlet started");
+		System.out.println("DispatcherServlet started");
 		// Set content type
 		resp.setContentType("application/json");
 		// getOutputStrean() because it will write the response more efficiently than getWriter().println()
 		// mapper.writeValueAsBytes() converts whatever the Dispatcher returns into a byte[], which getOutputStream().write() accepts
 		// Dispatcher.process() returns whatever resource we have available at the HttpServletRequest's URI
 		resp.getOutputStream().write(mapper.writeValueAsBytes(Dispatcher.process(req, resp)));
-		System.out.println("Response sent successfully - Dispatch Complete");
+		System.out.println("DispatcherServlet - Response sent successfully");
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("DispatcherServlet.doPost");
 		resp.setContentType("application/json");
 		resp.getOutputStream().write(mapper.writeValueAsBytes(Dispatcher.processPost(req, resp)));
-		System.out.println("Response sent successfully!");
+		System.out.println("DispatcherServlet - Response sent successfully!");
 	}
 }
 

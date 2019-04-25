@@ -14,17 +14,18 @@ import daos.EmployeeDaoImpl;
 public class EmployeeServiceImpl implements EmployeeService {
 
 	private final EmployeeDao dao = new EmployeeDaoImpl();
+	// Object mapper to turn Employee object into JSON
 	private final ObjectMapper mapper = new ObjectMapper();
 	
 	@Override
 	public List<Employee> getAllEmployees(HttpServletRequest request, HttpServletResponse response) {
-		System.out.println("Inside EmployeeServiceImpl - getAllEmployees");
+		System.out.println("EmployeeServiceImpl - getAllEmployees");
 		return dao.getAllEmployees();
 	}
 
 	@Override
 	public List<Employee> getEmployeeById(int id) {
-		System.out.println("Inside EmployeeServiceImpl - getEmployeeById");
+		System.out.println("EmployeeServiceImpl - getEmployeeById");
 		return dao.getEmployeeById(id);
 	}
 

@@ -1,4 +1,4 @@
-windows.onload = () => {
+window.onload = () => {
 	getAllReimbursements();
 }
 const getAllReimbursements = () => {
@@ -23,6 +23,27 @@ const populateReimbursementsTable = (listofReimbursements) => {
 	// enhanced for loop
 	for (let reimbursement of listofReimbursements) {
 		// Create a table cell for each property
-		const 
+		const  tdRId = document.createElement("td");
+		const tdRReq = document.createElement("td");
+		const tdRCst = document.createElement("td");
+		const tdRDsc = document.createElement("td");
+		const tdRSts = document.createElement("td");
+		const tdRMgr = document.createElement("td");
+		// Set value of each cell
+		 tdRId.textContent = reimbursement.tdRId;
+		tdRReq.textContent = reimbursement.tdRReq;
+		tdRCst.textContent = reimbursement.tdRCst;
+		tdRDsc.textContent = reimbursement.tdRDsc;
+		tdRSts.textContent = reimbursement.tdRSts;
+		tdRMgr.textContent = reimbursement.tdRMgr;
+		// Set td's to the corresponding order of table header
+		row.appendChild(tdRId);
+		row.appendChild(tdRReq);
+		row.appendChild(tdRCst);
+		row.appendChild(tdRDsc);
+		row.appendChild(tdRSts);
+		row.appendChild(tdRMgr);
+		// Append row onto table of reimbursements
+		document.getElementById("reimbursementTable").appendChild(row);
 	}
 }

@@ -23,7 +23,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 			ResultSet rs = stmt.executeQuery("SELECT * FROM REIMBURSEMENTS");
 			// Populate list from ResultSet
 			while (rs.next()) {
-				reimbursements.add(new Reimbursements(rs.getInt("REIMBURSEMENTS_ID"), rs.getString("REIMBURSEMENTS_REQUESTER"), rs.getString("REIMBURSEMENTS_AMOUNT"), rs.getString("REIMBURSEMENTS_DESCRIPTION"), rs.getString("EMPLOYEE_STATUS"),rs.getString("EMPLOYEE_MANAGER")));
+				reimbursements.add(new Reimbursements(rs.getInt("REIMBURSEMENTS_ID"), rs.getString("REIMBURSEMENTS_COST"), rs.getString("REIMBURSEMENTS_REQUESTER"), rs.getString("REIMBURSEMENTS_DESCRIPTION"), rs.getString("REIMBURSEMENTS_STATUS")));
 			}
 			System.out.println("Connected");
 			return reimbursements;

@@ -4,19 +4,19 @@ public class Reimbursements
 {
 	private int id;
 	private String requester;
-	private String amount;
+	private String cost;
 	private String descriptions;
 	private String status;
-	private String manager;
+
 	
-	public Reimbursements(int id, String requester, String amount, String descriptions, String status, String manager) {
+	public Reimbursements(int id, String cost, String requester, String descriptions, String status) {
 		super();
 		this.id = id;
+		this.cost = cost;
 		this.requester = requester;
-		this.amount = amount;
 		this.descriptions = descriptions;
 		this.status = status;
-		this.manager = manager;
+
 	}
 	
 	public int getId() {
@@ -31,11 +31,11 @@ public class Reimbursements
 	public void setRequester(String requester) {
 		this.requester = requester;
 	}
-	public String getAmount() {
-		return amount;
+	public String getCost() {
+		return cost;
 	}
-	public void setAmount(String amount) {
-		this.amount = amount;
+	public void setCost(String cost) {
+		this.cost = cost;
 	}
 	public String getDescriptions() {
 		return descriptions;
@@ -50,14 +50,6 @@ public class Reimbursements
 		this.status = status;
 	}
 
-	public String getManager() {
-		return manager;
-	}
-
-	public void setManager(String manager) {
-		this.manager = manager;
-	}
-	
 	
 	
 	
