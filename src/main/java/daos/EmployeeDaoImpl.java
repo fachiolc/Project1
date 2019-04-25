@@ -112,6 +112,12 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public Employee updateEmployee(String employee_name, String newPassword) {
+		// TODO Auto-generated method stub
+		// !!!! PLACEHOLDER FOR ACTUAL FUNCTION UP ABOVE. FIX ACTUAL FUNCTION AND DELETE THIS ONE!!!!!!
+		return null;
+	}
 	
 	
 	
