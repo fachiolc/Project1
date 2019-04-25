@@ -21,11 +21,13 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 			Statement stmt = conn.createStatement();
 			// Execute statement
 			ResultSet rs = stmt.executeQuery("SELECT * FROM REIMBURSEMENTS");
+			System.out.println("ReimbursementDaoImpl - getAllReimbursements()");
 			// Populate list from ResultSet
 			while (rs.next()) {
-				reimbursements.add(new Reimbursements(rs.getInt("REIMBURSEMENTS_ID"), rs.getString("REIMBURSEMENTS_COST"), rs.getString("REIMBURSEMENTS_REQUESTER"), rs.getString("REIMBURSEMENTS_DESCRIPTION"), rs.getString("REIMBURSEMENTS_STATUS")));
+				reimbursements.add(new Reimbursements(rs.getInt("REIMBURSEMENT_ID"), rs.getString("REIMBURSEMENT_COST"), rs.getString("REIMBURSEMENT_REQUESTER"), rs.getString("REIMBURSEMENT_DESCRIPTION"), rs.getString("REIMBURSEMENT_STATUS")));
+				System.out.println("ReimbursementDaoImpl - getAllReimbursements - Added Reimbursement");
 			}
-			System.out.println("Connected");
+			System.out.println("ReimbursementDaoImpl - getAllReimburesments - Connected");
 			return reimbursements;
 		} catch (SQLException e) {
 			e.printStackTrace();
