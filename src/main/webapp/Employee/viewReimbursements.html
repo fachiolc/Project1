@@ -11,15 +11,16 @@
 	<br>
 	<p> Input Reimbursement Details Below </p>
 	<form method="post" action="../../Project1_1/SubmitReimbursement">
+		<input class="form-control" type="text" id=requesterID name="requesterID" placeholder="Your Employee ID"/>
 		<input class="form-control" type="text" id="requestAmount" name="requestAmount" placeholder="Cost"/>
 		<input class="form-control" type="text" id="requestDescription" name="requestDescription" placeholder="Description"/>
 		<button class="btn-danger">Submit</button>
 	</form>
 	<br>
 	<br>
-	<form action="/Project1_1/ShowRequestedReimbursementsServlet">
-		<button>Show Requested Reimbursements</button>
-	</form>
+<!-- 	<form action="/Project1_1/ShowRequestedReimbursementsServlet"> -->
+<!-- 		<button>Show Requested Reimbursements</button> -->
+<!-- 	</form> -->
 	<table>
 		<thead>
 			<th>Reimbursement ID</th>
