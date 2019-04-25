@@ -31,11 +31,11 @@ const populateEmployeesTable = (listofEmployees) => {
 //        const tdDepartment = document.createElement("td");
         const tdEmployeeType = document.createElement("td");
 		// Set value of each cell
-        tdUserId.textContent = employee.UserId;
+        tdUserId.textContent = employee.id;
         tdName.textContent = employee.name;
 //        tdPassword.textcontent = employee.password;
         tdEmail.textContent = employee.email;
-        tdEmployeeType.textContent = employee.employeeType;
+        tdEmployeeType.textContent = employee.position;
         // Create row to be appended
         const row = document.createElement("tr");
         
