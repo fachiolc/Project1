@@ -61,6 +61,7 @@
 		<display-name>ShowRequestedReimbursementsServlet</display-name>
 		<servlet-name>ShowRequestedReimbursementsServlet</servlet-name>
 		<servlet-class>servlets.ShowRequestedReimbursementsServlet</servlet-class>
+		
 	</servlet>
 	<servlet>
 		<description>
@@ -68,6 +69,7 @@
 		<display-name>DisplayAllReimbursementsServlet</display-name>
 		<servlet-name>DisplayAllReimbursementsServlet</servlet-name>
 		<servlet-class>servlets.DisplayAllReimbursementsServlet</servlet-class>
+		
 	</servlet>
 	<servlet>
 		<description>

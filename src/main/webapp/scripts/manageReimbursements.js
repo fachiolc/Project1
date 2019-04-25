@@ -31,11 +31,11 @@ const populateReimbursementsTable = (listofReimbursements) => {
 		const tdRDsc = document.createElement("td");
 		const tdRSts = document.createElement("td");
 		// Set value of each cell
-		 tdRId.textContent = reimbursement.tdRId;
-		tdRReq.textContent = reimbursement.tdRReq;
-		tdRCst.textContent = reimbursement.tdRCst;
-		tdRDsc.textContent = reimbursement.tdRDsc;
-		tdRSts.textContent = reimbursement.tdRSts;
+		 tdRId.textContent = reimbursement.id;
+		tdRReq.textContent = reimbursement.requester;
+		tdRCst.textContent = reimbursement.cost;
+		tdRDsc.textContent = reimbursement.descriptions;
+		tdRSts.textContent = reimbursement.status;
 		// Create row to be appended
 		const row = document.createElement("tr");
 		// Set td's to the corresponding order of table header
