@@ -16,6 +16,7 @@ public class Dispatcher {
 		System.out.println("Inside Dispatcher: " + request.getMethod() + " request going to " + uri);
 		switch(uri) {
 		case "/employee":
+			System.out.println("Dispatch - " + request.getAttribute("employee"));
 			int id = (int) request.getAttribute("employee");
 			return employeeService.getEmployeeById(id);
 		case "/employees":

@@ -78,7 +78,7 @@ public class LoginServlet extends HttpServlet {
 							HttpSession session = request.getSession(true);
 							int id = rs.getInt("EMPLOYEE_ID");
 							session.setAttribute("employee", id);
-							System.out.println("id set" + id);
+							System.out.println("LoginServlet - id set:" + id);
 							
 							RequestDispatcher rd = request.getRequestDispatcher("./Employee/mainEmployee.html");
 							rd.forward(request,response);
