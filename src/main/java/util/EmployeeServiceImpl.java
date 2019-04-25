@@ -15,7 +15,6 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	private final EmployeeDao dao = new EmployeeDaoImpl();
 	// Object mapper to turn Employee object into JSON
-	private final ObjectMapper mapper = new ObjectMapper();
 	
 	@Override
 	public List<Employee> getAllEmployees(HttpServletRequest request, HttpServletResponse response) {

@@ -25,10 +25,14 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			// Populate list from ResultSet
 			while (rs.next()) {
 				
-				employees.add(new Employee(rs.getInt("EMPLOYEE_ID"), rs.getString("EMPLOYEE_NAME"), rs.getString("EMPLOYEE_PASSWORD"), rs.getString("EMPLOYEE_EMAIL"), rs.getString("EMPLOYEE_POSITION")));
+				employees.add(new Employee(rs.getInt("EMPLOYEE_ID"), 
+						rs.getString("EMPLOYEE_NAME"), 
+						rs.getString("EMPLOYEE_PASSWORD"), 
+						rs.getString("EMPLOYEE_EMAIL"), 
+						rs.getString("EMPLOYEE_POSITION")));
 				System.out.println("Added statement - Employee DAO impl");
 			}
-			System.out.println("Connected - Employee DAO impl");
+			//System.out.println("Connected - Employee DAO impl");
 			return employees;
 		} catch (SQLException e) {
 			e.printStackTrace();
