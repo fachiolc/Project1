@@ -28,14 +28,15 @@ public class SubmitReimbursement extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String employeeid = request.getParameter("requesterID");
-		String amount = request.getParameter("requestAmount");
-		String description = request.getParameter("requestDescription");
+		String reimbursementID = request.getParameter("reimbursementID");
+		String requestAmount = request.getParameter("requestAmount");
+		String requesterID = request.getParameter("requesterID");
+		String requestDescription = request.getParameter("requestDescription");
 		String status = "pending";
-		
+		System.out.println(reimbursementID +" "+  requestAmount +" "+ requesterID +" "+ requestDescription +" "+ status);
 		ReimbursementDaoImpl dao = new ReimbursementDaoImpl();
-			Reimbursements submitRequest = dao.addReimbursement(employeeid,amount,description,status);
-			response.sendRedirect("viewReimbursements.html");
+			Reimbursements submitRequest = dao.addReimbursement(reimbursementID,requestAmount,requesterID,requestDescription, status);
+			response.sendRedirect("../../Project1_1/Employee/viewReimbursements.html");
 		
 		
 		// Step 1: set content type

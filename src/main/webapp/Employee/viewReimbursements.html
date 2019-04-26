@@ -10,9 +10,11 @@
 	<br>
 	<br>
 	<p> Input Reimbursement Details Below </p>
-	<form method="post" action="../../Project1_1/SubmitReimbursement">
-		<input class="form-control" type="text" id=requesterID name="requesterID" placeholder="Your Employee ID"/>
+<!-- 	<form method="post" action="../../Project1_1/SubmitReimbursement"> -->
+	<form method="post" action="/Project1_1/SubmitReimbursement">
+		<input class="form-control" type="text" id=reimbursementID name="reimbursementID" placeholder="Next Reimbursement ID"/>
 		<input class="form-control" type="text" id="requestAmount" name="requestAmount" placeholder="Cost"/>
+		<input class="form-control" type="text" id=requesterID name="requesterID" placeholder="Your Employee ID"/>
 		<input class="form-control" type="text" id="requestDescription" name="requestDescription" placeholder="Description"/>
 		<button class="btn-danger">Submit</button>
 	</form>

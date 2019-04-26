@@ -23,10 +23,21 @@ public class ReimbursementServiceImpl implements ReimbursementService {
 		return dao.getAllReimbursements();
 	}
 
+//	@Override
+//	public Reimbursements createReimbursement(HttpServletRequest request, HttpServletResponse response) {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
 	@Override
-	public Reimbursements createReimbursement(HttpServletRequest request, HttpServletResponse response) {
-		// TODO Auto-generated method stub
-		return null;
+	public Reimbursements addReimbursement(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("ReimbursementServiceImpl - addReimbursement");
+		String reimbursementID = request.getParameter("reimbursementID");
+		String requestAmount = request.getParameter("requestAmount");
+		String requesterID = request.getParameter("requesterID");
+		String requestDescription = request.getParameter("requestDescription");
+		String status = "pending";
+		return dao.addReimbursement(reimbursementID,requestAmount,requesterID,requestDescription, status);
 	}
 
 }

@@ -9,5 +9,5 @@ import beans.Reimbursements;
 
 public interface ReimbursementService {
 	List<Reimbursements> getAllReimbursements(HttpServletRequest request, HttpServletResponse response);
-	Reimbursements createReimbursement(HttpServletRequest request, HttpServletResponse response);
+	Reimbursements addReimbursement(HttpServletRequest request, HttpServletResponse response);
 }
